@@ -3,10 +3,10 @@ Function Save-Video  {
     
     Write-Host "Attempting to save $video_url" -ForegroundColor Yellow
 
-    $request = Invoke-WebRequest -Uri $video_url
+    $response = Invoke-WebRequest -Uri $video_url
     
-    # display html code
-    $request.Content
+    # display found links
+    $response.Links
 }
 
 Save-Video $args[0]
